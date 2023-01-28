@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>subscribe form</title>
+	<link rel="stylesheet" type="text/css" href="landingpage.css">
+</head>
+<body>
+<div class="hero">
+	<h3>Coming Soon!</h3>
+	<h1>OurBrand New<br>Website Is On It's Way</h1>
+	<p>Subscribe For More Details</p>
+	<form method="post" action="https://script.google.com/macros/s/AKfycbwrsxuj2IXhgh73b5TQYHAjgaUv22b594eM1iq_6RsmOJRa3cbNQLjhT5nyzCqlDmIaOA/exec">
+		<input type="email" name="Email" placeholder="Your email id" required>
+		<button type="submit"><img src="send.png" width="30px"></button>
+	</form>
+	<span>Thankyou For Subscribing!</span>
+</div>
+<script>
+			const scriptURL = 'https://script.google.com/macros/s/AKfycbwrsxuj2IXhgh73b5TQYHAjgaUv22b594eM1iq_6RsmOJRa3cbNQLjhT5nyzCqlDmIaOA/exec'
+			const form = document.forms['formName']
+		  
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your form is submitted successfully." ))
+				.then(() => {  window.location.reload(); })
+				.catch(error => console.error('Error!', error.message))
+			})
+		  </script>
+</body>
+</html>
